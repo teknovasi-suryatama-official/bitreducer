@@ -5,7 +5,7 @@ Aplikasi untuk memonitor & memantau pekerjaan tim untuk terus berimprovement set
 
 ### v1.0
 - Register & Login
-- Login Multiuser (Administrator & Member) https://github.com/teknovasi-suryatama-official/sk-lazy/pulls
+- Login Multiuser (Administrator & Member) https://github.com/teknovasi-suryatama-official/sk-lazy/pull/1
 
 <br />
 Copyright &copy; Asep Septiadi. All right reserved
