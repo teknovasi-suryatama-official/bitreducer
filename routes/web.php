@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\MemberController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +15,25 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('welcome');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('administrator')->middleware(['auth', 'auth.administrator'])->group(function () {
+    // Route Group for Administrator
+    Route::get('index', [AdministratorController::class, 'index'])->name('administrator.index');
+});
+
+Route::prefix('member')->middleware(['auth', 'auth.member'])->group(function () {
+    // Route Group for Administrator
+    Route::get('index', [MemberController::class, 'index'])->name('member.index');
+});
+
+Auth::routes();
+
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect('/');
 });
