@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('administrator')->middleware(['auth', 'auth.administrator'])->group(function () {
     // Route Group for Administrator
     Route::get('index', [AdministratorController::class, 'index'])->name('administrator.index');
+    Route::resource('user', UserController::class);
 });
 
 Route::prefix('member')->middleware(['auth', 'auth.member'])->group(function () {

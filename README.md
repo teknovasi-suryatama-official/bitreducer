@@ -3,9 +3,18 @@ Aplikasi untuk memonitor & memantau pekerjaan tim untuk terus berimprovement set
 
 ## New Release Features!
 
+### v1.1
+
+_Rekap preventif soon updates_
+
 ### v1.0
 - Register & Login
 - Login Multiuser (Administrator & Member) https://github.com/teknovasi-suryatama-official/sk-lazy/pull/1
+
+Run via IP Address local
+```.sh
+~$ sudo php artisan serve --host 192.168.11.74 --port 8000
+```
 
 <br />
 Copyright &copy; Asep Septiadi. All right reserved
